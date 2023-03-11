@@ -12,11 +12,10 @@ m = int(input('Введите ширину шоколадки: '))
 
 k = int(input('Введите сколько долек должно быть в одном разломе?: '))
  
-if m * n - k == 0:
-    result = 'NO' 
-elif (k > m) or (k > n) and (k % m == 0) or (k % n == 0):
-    result = 'YES'
+if m * n > k and (k % m == 0 or k % n == 0):
+    result = 'YES' 
 else:
     result = 'NO'
 
 print(result)
+
