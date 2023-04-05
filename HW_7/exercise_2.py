@@ -17,11 +17,28 @@
 # 5 10 15 20 25 30
 # 6 12 18 24 30 36
 
-def print_operation_table(operation, num_rows=9, num_columns=9):
-    for i in range(1, num_rows + 1):
-        answer = []
-        for j in range(1, num_columns + 1):
-            answer.append(str(operation(i, j)))
-        print(''.join(f'{e:<4}' for e in answer))
 
-print_operation_table(lambda x, y: x * y)
+
+def print_operation_table(x, y):
+    mas = [[0] * y for i in range(x)]
+    for i in range(1, x + 1):
+        for j in range(1, y + 1):
+            mas[i - 1][j - 1] = (i * j)
+        print(' '.join(map(str, mas[i - 1])))
+
+x1 = 10
+y1 = 9
+
+print_operation_table(x1, y1)
+
+#7777777777777777777777777777777777777
+
+
+# def print_operation_table(operation, num_rows=9, num_columns=9):
+#     for i in range(1, num_rows + 1):
+#         answer = []
+#         for j in range(1, num_columns + 1):
+#             answer.append(str(operation(i, j)))
+#         print(''.join(f'{e:<4}' for e in answer))
+
+# print_operation_table(lambda x, y: x * y)
